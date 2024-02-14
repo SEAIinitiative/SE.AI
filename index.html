@@ -10,14 +10,24 @@
       padding: 0;
       font-family: Arial, sans-serif;
       overflow: hidden; /* Prevent scrolling */
+      background-color: black; /* Background color of the galaxy */
+      color: white; /* Color of the text */
     }
     .galaxy {
       position: relative;
       width: 100vw; /* Full width */
       height: 100vh; /* Full height */
-      overflow: hidden;
-      background-color: black; /* Background color of the galaxy */
-      color: white; /* Color of the text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .center {
+      position: absolute;
+      width: 10px; /* Adjust the size of the center */
+      height: 10px;
+      background-color: white; /* Color of the center */
+      border-radius: 50%; /* Make it round */
+      z-index: 1; /* Place it above the text elements */
     }
     .text {
       position: absolute;
@@ -44,6 +54,7 @@
 <body>
 
 <div class="galaxy">
+  <div class="center"></div>
   <div class="text">Text 1</div>
   <div class="text">Text 2</div>
   <!-- Add more text elements here -->
