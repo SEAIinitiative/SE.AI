@@ -44,6 +44,7 @@
   function generateGalaxy() {
     const screenWidth = window.innerWidth; // Width of the screen
     const screenHeight = window.innerHeight; // Height of the screen
+    const center = { x: screenWidth / 2, y: screenHeight / 2 };
     let galaxy = '';
 
     // Generate the spiral arms
@@ -51,18 +52,26 @@
       let row = '';
       for (let x = 0; x < screenWidth; x++) {
         // Calculate distance from the center
-        const dx = x - screenWidth / 2;
-        const dy = y - screenHeight / 2;
+        const dx = x - center.x;
+        const dy = y - center.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // Generate characters based on distance
+        // Generate characters based on distance and angle from the center
         if (distance < screenWidth / 2) {
-          // Determine whether to change the character at this position
-          if (Math.random() < 0.01) { // Adjust the probability as needed
-            row += getRandomCharacter();
-          } else {
-            row += document.getElementById('galaxy').innerText[y * screenWidth + x] || getRandomCharacter(); // Keep the previous character if it exists
+          const angle = Math.atan2(dy, dx);
+          const armCount = 4; // Number of spiral arms
+          const armWidth = Math.PI / (2 * armCount); // Width of each arm
+          let character = ' '; // Default character is empty space
+
+          // Check if the point is within a spiral arm
+          for (let i = 0; i < armCount; i++) {
+            const armAngle = armWidth * i;
+            if (angle > armAngle && angle < armAngle + armWidth) {
+              character = getRandomCharacter();
+              break;
+            }
           }
+          row += character;
         } else {
           row += ' '; // Empty space outside the galaxy
         }
