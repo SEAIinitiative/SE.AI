@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galaxy {
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+  /* Add styling to create the elliptical shape and position text */
+  /* Use CSS animations for spinning effect */
+}
