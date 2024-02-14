@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galaxy of Text</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: black; /* Set background color to black */
-      color: white; /* Set text color to white */
-      font-family: Arial, sans-serif;
-    }
-    .galaxy {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-    .text {
-      position: absolute;
-      animation: move 10s infinite linear; /* Animation for continuous movement */
-    }
-    @keyframes move {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Spiral Galaxy ASCII Art</title>
+<style>
+  body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+  }
+</style>
 </head>
 <body>
-  <div class="galaxy">
-    <!-- Replace the lorem ipsum text with your randomized changing letters and numbers -->
-    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-  </div>
+<pre id="galaxy"></pre>
+
+<script>
+  // Define ASCII characters for the galaxy representation
+  const asciiCharacters = ['*', '+', '.', '-', '^', '&', '#', '@', '%', '='];
+
+  // Function to generate a random character from the ASCII characters array
+  function getRandomCharacter() {
+    const randomIndex = Math.floor(Math.random() * asciiCharacters.length);
+    return asciiCharacters[randomIndex];
+  }
+
+  // Function to generate a random ASCII representation of the spiral galaxy
+  function generateGalaxy() {
+    const width = 80; // Width of the galaxy representation
+    const height = 40; // Height of the galaxy representation
+    let galaxy = '';
+
+    // Generate the spiral arms
+    for (let y = 0; y < height; y++) {
+      let row = '';
+      for (let x = 0; x < width; x++) {
+        // Calculate distance from the center
+        const dx = x - width / 2;
+        const dy = y - height / 2;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // Generate characters based on distance
+        if (distance < width / 2) {
+          row += getRandomCharacter();
+        } else {
+          row += ' '; // Empty space outside the galaxy
+        }
+      }
+      galaxy += row + '\n';
+    }
+
+    return galaxy;
+  }
+
+  // Function to update the galaxy representation periodically
+  function updateGalaxy() {
+    const galaxyElement = document.getElementById('galaxy');
+    galaxyElement.textContent = generateGalaxy();
+
+    // Repeat the update every 500 milliseconds (adjust as needed)
+    setTimeout(updateGalaxy, 500);
+  }
+
+  // Initial call to start updating the galaxy
+  updateGalaxy();
+</script>
 </body>
 </html>
