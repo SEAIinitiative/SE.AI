@@ -57,7 +57,12 @@
 
         // Generate characters based on distance
         if (distance < screenWidth / 2) {
-          row += getRandomCharacter();
+          // Determine whether to change the character at this position
+          if (Math.random() < 0.01) { // Adjust the probability as needed
+            row += getRandomCharacter();
+          } else {
+            row += document.getElementById('galaxy').innerText[y * screenWidth + x] || getRandomCharacter(); // Keep the previous character if it exists
+          }
         } else {
           row += ' '; // Empty space outside the galaxy
         }
