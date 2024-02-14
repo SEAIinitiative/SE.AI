@@ -3,59 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEAI Initiative</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      overflow: hidden; /* Prevent scrolling */
-      background-color: black; /* Background color of the galaxy */
-      color: white; /* Color of the text */
-    }
-    .galaxy {
-      position: relative;
-      width: 100vw; /* Full width */
-      height: 100vh; /* Full height */
-      overflow: hidden; /* Hide overflowing text */
-    }
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px; /* Adjust the size of the center */
-      height: 50px;
-      background-color: white; /* Color of the center */
-      border-radius: 50%; /* Make it round */
-      z-index: 1; /* Place it above the text elements */
-    }
-    .text {
-      position: absolute;
-      font-size: 10px; /* Adjust the font size as needed */
-      animation: swirl 10s linear infinite; /* Adjust the animation duration and timing function */
-    }
-    @keyframes swirl {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-    /* Add more text elements */
-    .text:nth-child(1) { top: 20%; left: 20%; }
-    .text:nth-child(2) { top: 30%; left: 30%; }
-    .text:nth-child(3) { top: 40%; left: 40%; }
-    /* Add more text elements as needed */
-  </style>
+  <title>Spinning Galaxy Calligram</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="galaxy">
-  <div class="center"></div>
-  <!-- Add more text elements -->
-  <div class="text">A</div>
-  <div class="text">B</div>
-  <div class="text">C</div>
-  <!-- Add more text elements as needed -->
-</div>
-
+  <div class="container">
+    <div class="galaxy"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
