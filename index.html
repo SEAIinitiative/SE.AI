@@ -38,7 +38,8 @@
     const center = { x: screenWidth / 2, y: screenHeight / 2 }; // Center of the screen
     const armCount = 4; // Number of spiral arms
     const armLength = Math.min(screenWidth, screenHeight) / 2; // Length of each arm (half of screen diagonal)
-    const armCharacters = ['*', '+', '@', '#', '$', '%', '&', '=']; // Characters to represent spiral arms
+    const armCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ']; // Characters to represent spiral arms
+    const bulgeSize = 50; // Size of the central bulge
     let galaxy = '';
 
     // Generate the ASCII representation of the galaxy
@@ -54,17 +55,23 @@
         // Initialize character as empty space
         let character = ' ';
 
-        // Check if the point falls within any of the spiral arms
-        for (let i = 0; i < armCount; i++) {
-          // Calculate the angle range for the current arm
-          const armStartAngle = i * (2 * Math.PI / armCount);
-          const armEndAngle = armStartAngle + (2 * Math.PI / armCount);
+        // Check if the point is within the central bulge
+        if (distance < bulgeSize) {
+          character = getRandomCharacter(); // Use random character for the central bulge
+        } else {
+          // Check if the point falls within any of the spiral arms
+          for (let i = 0; i < armCount; i++) {
+            // Calculate the angle range for the current arm
+            const armStartAngle = i * (2 * Math.PI / armCount);
+            const armEndAngle = armStartAngle + (2 * Math.PI / armCount);
 
-          // Determine if the point is within the arm
-          if (angle >= armStartAngle && angle < armEndAngle && distance <= armLength) {
-            // Replace empty space with a character representing the arm
-            character = armCharacters[i % armCharacters.length]; // Use different characters for each arm
-            break; // Exit loop since point is within an arm
+            // Determine if the point is within the arm
+            if (angle >= armStartAngle && angle < armEndAngle && distance <= armLength) {
+              // Use different characters and density for each arm
+              const density = 2 + Math.floor((armCharacters.length - 2) * (1 - distance / armLength)); // Vary density based on distance
+              character = armCharacters[i % density]; // Use different characters for each arm
+              break; // Exit loop since point is within an arm
+            }
           }
         }
 
@@ -74,6 +81,13 @@
     }
 
     return galaxy;
+  }
+
+  // Function to generate a random character from the galaxy characters array
+  function getRandomCharacter() {
+    const galaxyCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' '];
+    const randomIndex = Math.floor(Math.random() * galaxyCharacters.length);
+    return galaxyCharacters[randomIndex];
   }
 
   // Function to update the galaxy representation periodically
