@@ -17,14 +17,15 @@
       position: relative;
       width: 100vw; /* Full width */
       height: 100vh; /* Full height */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden; /* Hide overflowing text */
     }
     .center {
       position: absolute;
-      width: 10px; /* Adjust the size of the center */
-      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px; /* Adjust the size of the center */
+      height: 50px;
       background-color: white; /* Color of the center */
       border-radius: 50%; /* Make it round */
       z-index: 1; /* Place it above the text elements */
@@ -32,57 +33,28 @@
     .text {
       position: absolute;
       font-size: 10px; /* Adjust the font size as needed */
-      animation: spin 10s linear infinite; /* Adjust the animation duration and timing function */
+      animation: swirl 10s linear infinite; /* Adjust the animation duration and timing function */
     }
-    @keyframes spin {
-      0% { transform: translateX(0) translateY(0); }
-      100% { transform: translateX(100px) translateY(100px) rotate(360deg); }
+    @keyframes swirl {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
-    .main-content {
-      padding: 50px 20px;
-    }
-    .footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      position: relative; /* Ensure footer stays at the bottom */
-      z-index: 2; /* Keep footer above video */
-    }
+    /* Add more text elements */
+    .text:nth-child(1) { top: 20%; left: 20%; }
+    .text:nth-child(2) { top: 30%; left: 30%; }
+    .text:nth-child(3) { top: 40%; left: 40%; }
+    /* Add more text elements as needed */
   </style>
 </head>
 <body>
 
 <div class="galaxy">
   <div class="center"></div>
-  <div class="text">Text 1</div>
-  <div class="text">Text 2</div>
-  <!-- Add more text elements here -->
-</div>
-
-<div class="main-content">
-  <!-- Add your main content sections here -->
-  <section>
-    <h2>Main Page</h2>
-    <p>Content for the main page goes here...</p>
-  </section>
-  <section>
-    <h2>Whitepaper</h2>
-    <p>Content for the whitepaper goes here...</p>
-  </section>
-  <section>
-    <h2>Use Cases</h2>
-    <p>Content for the use cases goes here...</p>
-  </section>
-  <section>
-    <h2>Community</h2>
-    <p>Content for the community section goes here...</p>
-  </section>
-</div>
-
-<div class="footer">
-  <!-- Footer content -->
-  <p>&copy; 2024 SEAI Initiative</p>
+  <!-- Add more text elements -->
+  <div class="text">A</div>
+  <div class="text">B</div>
+  <div class="text">C</div>
+  <!-- Add more text elements as needed -->
 </div>
 
 </body>
