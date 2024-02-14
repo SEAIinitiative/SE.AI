@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
+  <title>SEAI Initiative</title>
   <style>
     body {
       margin: 0;
@@ -35,15 +35,13 @@
     }
     .main-content {
       padding: 50px 20px;
+      background-color: #f8f8f8;
     }
-    .sticky-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      padding: 10px 20px;
-      z-index: 2;
+    .section {
+      padding: 20px 0;
+    }
+    .section h2 {
+      margin-bottom: 20px;
     }
     .footer {
       background-color: #333;
@@ -56,38 +54,32 @@
 <body>
   <div class="hero">
     <div class="video-overlay">
-      <p></p>
+      <p>Welcome to SEAI Initiative</p>
     </div>
-    <!-- Replace 'video-source.mp4' with your video file -->
-    <video autoplay loop muted playsinline style="width: 150%; height: 100%">
+    <!-- Replace 'milky_way.mp4' with your video file -->
+    <video autoplay loop muted playsinline style="width: 100%; height: 100%">
       <source src="Milky_Way_Footage.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
 
   <div class="main-content">
-    <!-- Add your main content sections here -->
-    <section>
-      <h2>About Us</h2>
-      <p>Place your content here...</p>
+    <section class="section" id="whitepaper">
+      <h2>Whitepaper</h2>
+      <p>Place your whitepaper content here...</p>
     </section>
-    <section>
-      <h2>Services</h2>
-      <p>Place your content here...</p>
+    <section class="section" id="use-cases">
+      <h2>Use Cases</h2>
+      <p>Place your use cases content here...</p>
     </section>
-    <section>
-      <h2>Contact</h2>
-      <p>Place your content here...</p>
+    <section class="section" id="community">
+      <h2>Community</h2>
+      <p>Place your community content here...</p>
     </section>
   </div>
 
   <div class="footer">
-    <!-- Footer content -->
-    <p>&copy; 2024 Your Company Name</p>
+    <p>&copy; 2024 SEAI Initiative</p>
   </div>
-  
-  <script>
-    // Add JavaScript code here for scroll-triggered animation (if needed)
-  </script>
 </body>
 </html>
