@@ -11,38 +11,22 @@
       font-family: Arial, sans-serif;
       overflow: hidden; /* Prevent scrolling */
     }
-    .hero {
+    .galaxy {
       position: relative;
       width: 100vw; /* Full width */
       height: 100vh; /* Full height */
       overflow: hidden;
+      background-color: black; /* Background color of the galaxy */
+      color: white; /* Color of the text */
     }
-    .video-overlay {
+    .text {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 2rem;
-      z-index: 1;
+      font-size: 10px; /* Adjust the font size as needed */
+      animation: spin 10s linear infinite; /* Adjust the animation duration and timing function */
     }
-    .video-overlay p {
-      text-align: center;
-      max-width: 80%;
-    }
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      object-fit: cover; /* Cover entire container */
-      z-index: -1; /* Send video behind other content */
+    @keyframes spin {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(100px) translateY(100px) rotate(360deg); }
     }
     .main-content {
       padding: 50px 20px;
@@ -59,15 +43,10 @@
 </head>
 <body>
 
-<div class="hero">
-  <div class="video-overlay">
-    <p>Loading...</p>
-  </div>
-  <!-- Replace 'Galaxy.mp4' with the path to your Milky Way video -->
-  <video autoplay loop muted playsinline>
-    <source src="Media/Galaxy.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div class="galaxy">
+  <div class="text">Text 1</div>
+  <div class="text">Text 2</div>
+  <!-- Add more text elements here -->
 </div>
 
 <div class="main-content">
