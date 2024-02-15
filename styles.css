@@ -1,22 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-}
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.galaxy {
-  width: 200px;
-  height: 100px;
-  background-color: transparent;
-  /* Add styling to create the elliptical shape and position text */
-  /* Use CSS animations for spinning effect */
+/* Style to cover the whole screen with flashing characters */
+#bannerSVG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(6, 20, 52);
+    z-index: 9999; /* Ensure it's above other content */
 }
