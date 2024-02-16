@@ -1,3 +1,32 @@
+// Function to toggle header visibility based on scroll position
+function toggleHeaderVisibility() {
+    var header = document.getElementById('header');
+    var imageContainer = document.querySelector('.fullscreen-image');
+    
+    // Check if the image container exists
+    if (!imageContainer) {
+        console.error("Image container not found!");
+        return;
+    }
+    
+    var imageContainerHeight = imageContainer.offsetHeight;
+
+    // Listen for scroll events
+    window.addEventListener("scroll", function() {
+        // Get the current scroll position
+        var scrollPosition = window.scrollY || window.pageYOffset;
+
+        // Check if the scroll position is below the image container
+        if (scrollPosition > imageContainer.offsetTop + imageContainerHeight) {
+            // Add a class to the header to make it visible
+            header.classList.add('header-visible');
+        } else {
+            // Remove the class from the header to hide it
+            header.classList.remove('header-visible');
+        }
+    });
+}
+
 // Function to generate random digital rain-like characters
 function getRandomDigitalRainCharacter() {
     // Custom set of characters resembling digital rain
@@ -35,6 +64,9 @@ function animateText(y) {
         x += offset; // Update x position with fixed offset
     });
 }
+
+// Call the function to toggle header visibility
+toggleHeaderVisibility();
 
 // Call animateText function for each text line
 for (let i = 0; i < 50; i++) {
