@@ -3,16 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashing Characters</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>SEAI-Initiative</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <svg id="bannerSVG" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 1000">
-        <!-- Use a loop to generate multiple lines of text -->
-        <g id="textGroup"></g>
-        <text x="50%" y="50%" fill="#ffffff" id="companyName">SEAI-Initiative</text>
-    </svg>
-
+    <header id="header">
+        <nav class="nav-tabs">
+            <div class="container">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#white-paper">White Paper</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="section fullscreen-image">
+            <div class="image-container">
+                <!-- Flashing characters SVG content here -->
+                <svg id="bannerSVG" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 1000">
+                    <!-- Use a loop to generate multiple lines of text -->
+                    <g id="textGroup"></g>
+                    <text x="50%" y="50%" fill="#ffffff" id="companyName">SEAI-Initiative</text>
+                </svg>
+            </div>
+        </section>
+        <section class="section extra-section"></section>
+        <section id="community" class="section">
+            <div class="container">
+                <h2>Community</h2>               
+                <!-- Community content -->
+            </div>
+        </section>
+        <section class="section extra-section"></section>
+        <section id="white-paper" class="section">
+            <div class="container">
+                <h2>White Paper</h2>
+                Coming Soon          
+                <!-- White paper content -->
+            </div>
+        </section>
+        <section class="section extra-section"></section>
+        <section id="roadmap" class="section">
+            <div class="container">
+                <h2>Roadmap</h2>
+                Coming Soon
+                <!-- Roadmap content -->
+            </div>
+        </section>
+        <section class="section extra-section"></section>
+        <section class="section extra-section"></section>
+        <section class="section extra-section"></section>
+    </main>    
     <script src="script.js"></script>
 </body>
 </html>
