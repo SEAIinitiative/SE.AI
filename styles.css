@@ -1,94 +1,196 @@
-/* General styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace, 'Helvetica', sans-serif;
+}
+
 body {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #222437;
-    color: #fff;
-    overflow-x: hidden;
+    min-height: 1000px;
+    background-color: #08142e;
+
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-h1, h2 {
-    color: #fff;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: #ccc;
-}
-
-/* Header styles */
-#header {
-    background-color: #343641;
-    width: 100%;
-    position: fixed; /* Fixed position to stick to the top */
-    top: -80px; /* Initially hide the header above the viewport */
+header {
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
-    height: 50px;
-    transition: top 0.3s ease; /* Add transition for smoother effect */
-}
-
-/* Show the header when it has the 'header-visible' class */
-#header.header-visible {
-    top: 0; /* Move the header to the top of the viewport */
-}
-
-/* Navigation styles */
-.nav-tabs ul {
+    width: 100%;
+    height: 100vh;
+    padding: 0px 100px;
+    background-color: #08142e;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100%
+    transition-duration: 1s;
 }
 
-.nav-tabs li {
-    margin: 0 20px;
+header.sticky {
+    height: 80px;
+  
 }
 
-.nav-tabs a {
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    line-height: 50px; 
-}
-
-.nav-tabs a:hover {
-    color: #cccccc;
-}
-
-/* Home section styles */
-.fullscreen-image {
-    position: relative;
-    height: 84vh;
-    background-color: #222437;
-    z-index: 1000;
-}
-
-.image-container {
-    border: 3px solid #fff;
+header .banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 96%;
+    height: 96%;
+    object-fit: cover;
+    transition: 1s;
+    transform: translate(-50%, -50%);
+    border: 3px solid #243142; 
     border-radius: 20px;
-    overflow: hidden;
-    height: 100%;
-    position: relative;
-    background-color: #343641;
-    z-index: 999;
-    margin: 20px;
+    background-color: #08142e; /* Lighter Blue */
+    z-index: 0;
 }
 
-/* Adjusting the height of extra sections */
-.extra-section {
-    height: 200px;
+header.sticky .banner {
+    opacity: 0.5;
+    
+}
+
+header .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font: Helvetica;
+    font-size: 12vw;
+    color: #fff;
+    font-weight: 600;
+    transition: 1s;
+    text-decoration: none;
+    z-index: 1;
+}
+
+header.sticky .logo {
+    position: absolute;
+    font-size: 2em;
+    left: 100px;
+    transform: translate(0, -50%);
+}
+nav {
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    transition: .25s;
+    transform: translate(100px);
+    opacity: 0; /*casues the nav to be invisible when fullscreen*/
+    visibility: hidden;
+}
+
+header.sticky nav ul {
+    transform: translate(0);
+    opacity: 1; /*casues nav to be visible when sticky*/
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    display: inline-block;
+    padding:  10px 15px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: transform .3s ease;
+}
+
+nav ul li a:hover {
+    color:gray;
+    transform: translateX(-5px);
+    
+    
+}
+
+section {
+    margin-top: 50vh;
+    padding: 100px;
+    color: #fff;
+}
+
+section h2 {
+    font-size: 3em;
+}
+
+section p {
+    font-size: 1.2em;
+}
+
+/*make it responsive*/
+@media (max-width: 991px)
+{
+    section h2 {
+        font-size: 2em;
+    }
+
+    header.sticky .logo {
+        left: 40px;
+    }
+
+    header.sticky .banner {
+        opacity: .5;
+    }
+
+    nav ul {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        
+    }
+    
+    nav.active ul {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    
+
+    nav ul li a { 
+        font-size: 2em;
+    }
+
+    header.sticky .toggle {
+        position: fixed;
+        top: 15px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        background: #fff url(menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform .3s ease;
+    }
+
+    header.sticky .toggle:hover {
+        transform: translateY(-5px);
+    }
+
+    header.sticky .toggle.active {
+        background: #fff url(close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center; 
+    }
 }
