@@ -46,7 +46,7 @@ header .banner {
 }
 
 header.sticky .banner {
-    opacity: 0; /*makes the video on banner disapear*/
+    opacity: 1; /*makes the video on banner disapear*/
 }
 
 header .logo {
