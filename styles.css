@@ -57,7 +57,7 @@ header .logo {
     font: 'Fira Code';
     font-size: 12vw;
     color: #fff;
-    font-weight: 600;
+    font-weight: bold;
     transition: 1s;
     text-decoration: none;
     z-index: 1;
@@ -148,7 +148,7 @@ section p {
     }
 
     header.sticky .banner {
-        opacity: .5;
+        opacity: 1;
     }
 
     nav ul {
