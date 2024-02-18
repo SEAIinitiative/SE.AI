@@ -13,5 +13,5 @@ document.querySelector('.toggle').onclick = function(){
     }, 123);//this is the start of a delay 
     setTimeout(() => {
         this.classList.toggle('spin');
-    },123)
+    },123);
 };
