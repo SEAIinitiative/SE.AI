@@ -4,11 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Fira Code';
+    overflow-wrap: break-word;
 }
 
 body {
     min-height: 1000px;
-    background-color: #08142e;
+    background-color: #000;
 
 }
 
@@ -19,7 +20,7 @@ header {
     width: 100%;
     height: 100vh;
     padding: 0px 100px;
-    background-color: #08142e;
+    background-color: #000;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -28,27 +29,24 @@ header {
 
 header.sticky {
     height: 80px;
-  
+    opacity: 1;
 }
 
 header .banner {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 96%;
-    height: 96%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: 1s;
     transform: translate(-50%, -50%);
-    border: 3px solid #243142; 
-    border-radius: 20px;
-    background-color: #08142e; /* Lighter Blue */
+    background-color: #000; /* black */
     z-index: 0;
 }
 
 header.sticky .banner {
-    opacity: 0.5;
-    
+    opacity: 0; /*makes the video on banner disapear*/
 }
 
 header .logo {
@@ -56,7 +54,7 @@ header .logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font: Helvetica;
+    font: 'Fira Code';
     font-size: 12vw;
     color: #fff;
     font-weight: 600;
@@ -101,17 +99,17 @@ nav ul li {
 nav ul li a {
     color: #fff;
     display: inline-block;
-    padding:  10px 15px;
+    padding:  6px 15px;
     font-size: 1.2em;
     text-decoration: none;
-    transition: transform .3s ease;
+    transition: .3s ease;
 }
 
 nav ul li a:hover {
-    color:gray;
-    transform: translateX(-5px);
-    
-    
+    color:white;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-underline-offset: 10px;
 }
 
 section {
@@ -128,6 +126,15 @@ section p {
     font-size: 1.2em;
 }
 
+/*large screen specific*/
+@media (min-width:992px)
+{
+    nav ul li a:hover{
+        transform: translateY(5px);
+        
+    }
+}
+
 /*make it responsive*/
 @media (max-width: 991px)
 {
@@ -137,6 +144,7 @@ section p {
 
     header.sticky .logo {
         left: 40px;
+       
     }
 
     header.sticky .banner {
@@ -147,7 +155,6 @@ section p {
         display: none;
         opacity: 0;
         visibility: hidden;
-        
     }
     
     nav.active ul {
@@ -156,17 +163,39 @@ section p {
         left: 0;
         width:100%;
         height: 100%;
-        background-color: #000;
+        background: #000;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        opacity:1;
+        
+        
     }
-    
-    
 
     nav ul li a { 
         font-size: 2em;
+        transform: .3s ease;
+    }
+
+    nav ul li a:hover{
+        transform:translateX(5px);
+    }
+
+        /* Define the spin animation */
+    @keyframes spinAndShrink {
+        0% {
+            transform: rotate(0deg) scale(1); /* Initial state: no rotation and normal size */
+        }
+        100% {
+            transform: rotate(180deg) scale(0.5); /* Final state: full rotation and half size */
+        }
+    }
+
+    /* Apply the spin animation to the .spin class */
+    header.sticky .spin {
+        animation: spinAndShrink .25s ease-in-out; /* Adjust animation duration and timing function as needed */
+        
     }
 
     header.sticky .toggle {
@@ -176,11 +205,12 @@ section p {
         width: 50px;
         height: 50px;
         cursor: pointer;
-        background: #fff url(media/menu.png);
+        background: url(media/menu_arrow_50.png);
         background-size: 30px;
         background-repeat: no-repeat;
         background-position: center;
         transition: transform .3s ease;
+        
     }
 
     header.sticky .toggle:hover {
@@ -188,9 +218,78 @@ section p {
     }
 
     header.sticky .toggle.active {
-        background: #fff url(media/close.png);
-        background-size: 25px;
+        background: url(media/close.png);
+        background-size: 30px;
         background-repeat: no-repeat;
         background-position: center; 
+    }
+}
+
+/* For smartphones */
+@media (max-width: 767px) {
+    section h2 {
+        font-size: 1.5em; /* Adjust the font size as needed */
+    }
+
+    header.sticky .logo {
+        left: 20px; /* Adjust the left position as needed */
+    }
+
+    header.sticky .banner {
+        display: none; /* Hide the banner on smaller screens */
+    }
+
+    nav ul {
+        display: none; /* Hide the nav menu by default */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 60px; /* Adjust the top position as needed */
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    nav ul li a {
+        font-size: 1.2em; /* Adjust the font size as needed */
+    }
+
+    nav.active ul li:hover {
+        transform:translateX(5px);
+    }
+
+    header.sticky .toggle {
+        position: fixed;
+        top: 15px;
+        right: 20px; /* Adjust the right position as needed */
+        width: 40px; /* Adjust the width as needed */
+        height: 40px; /* Adjust the height as needed */
+        cursor: pointer;
+        background: url(media/menu_arrow_50.png);
+        background-size: 30px; /* Adjust the background size as needed */
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform .3s ease;
+    }
+
+    header.sticky .toggle:hover {
+        transform: translateY(-5px);
+        
+    }
+
+    header.sticky .toggle.active {
+        background: url(media/close.png);
+        background-size: 30px; /* Adjust the background size as needed */
+        background-repeat: no-repeat;
+        background-position: center;
+        
     }
 }
