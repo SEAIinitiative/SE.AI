@@ -392,7 +392,7 @@ p {
 }
 #projects .project-img {
 	flex-basis: 50%;
-	height: 150px;
+	height: 300px;
 	overflow: hidden;
 	position: relative;
 }
