@@ -28,19 +28,17 @@ menu_item.forEach((item) => {
 var password = prompt("Initiate access protocol: Provide encrypted authentication key for system validation.");
 
 // Check if password is correct
-
 if (password === "123456789") {
-	alert("Welcome Aboard!");
+    // Display welcome message
+    alert("Welcome Aboard!");
 
-// Redirect to the protected content
+    // Redirect to the protected content
+    window.location.href = "https://seaiinitiative.github.io/SEAI-Initiative/";
+} else {
+    // Incorrect password
+    alert("Incorrect");
 
-	window.location.href = "https://seaiinitiative.github.io/SEAI-Initiative/";
-  } else {
+    // Redirect back to login page or display an error message
+    window.location.href = "https://www.google.com/";
+}
 
-// Incorrect password
-
-	alert("Incorrect");
-
-// Redirect back to login page or display an error message
-	window.location.href = "https://www.google.com/";
-  }
