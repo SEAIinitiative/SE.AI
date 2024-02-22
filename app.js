@@ -23,3 +23,24 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+
+// Prompt user for password
+var password = prompt("Passphrase");
+
+// Check if password is correct
+
+if (password === "123456789") {
+	alert("Accesss Granted");
+
+// Redirect to the protected content
+
+	window.location.href = "https://seaiinitiative.github.io/SEAI-Initiative/";
+  } else {
+
+// Incorrect password
+
+	alert("Incorrect");
+
+// Redirect back to login page or display an error message
+	window.location.href = "https://www.google.com/";
+  }
