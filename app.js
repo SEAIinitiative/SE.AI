@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 function checkPassword() {
     const passwordInput = document.getElementById('password').value;
-    const correctPassword = '123456789'; // This is your predefined password
+    const correctPassword = 'G3ntleman'; // This is your predefined password
 
     if (passwordInput === correctPassword) {
         // Directly show the protected content without using localStorage
