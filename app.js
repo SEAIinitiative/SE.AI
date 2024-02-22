@@ -24,29 +24,26 @@ menu_item.forEach((item) => {
 	});
 });
 
- document.addEventListener('DOMContentLoaded', (event) => {
-            const storedToken = localStorage.getItem('accessGranted');
-            if (storedToken) {
-                showContent();
-            } else {
-                document.getElementById('passwordPrompt').style.display = 'flex';
-            }
-        });
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Always display the password prompt when the page loads
+    document.getElementById('passwordPrompt').style.display = 'flex';
+});
 
-        function checkPassword() {
-            const passwordInput = document.getElementById('password').value;
-            const correctPassword = '123456789'; // Change this to your actual password
+function checkPassword() {
+    const passwordInput = document.getElementById('password').value;
+    const correctPassword = '123456789'; // This is your predefined password
 
-            if (passwordInput === correctPassword) {
-                localStorage.setItem('accessGranted', 'true');
-                showContent();
-            } else {
-                alert('Incorrect Key');
-                document.getElementById('password').value = ''; // Optional: Clear the input field after an incorrect attempt
-            }
-        }
+    if (passwordInput === correctPassword) {
+        // Directly show the protected content without using localStorage
+        showContent();
+    } else {
+        alert('Incorrect Key'); // Show an error message for incorrect password
+        document.getElementById('password').value = ''; // Optionally clear the input field after an incorrect attempt
+    }
+}
 
-        function showContent() {
-            document.getElementById('protectedContent').style.display = 'block';
-            document.getElementById('passwordPrompt').style.display = 'none';
-        }
+function showContent() {
+    // Hide the password prompt and show the protected content
+    document.getElementById('passwordPrompt').style.display = 'none';
+    document.getElementById('protectedContent').style.display = 'block';
+}
