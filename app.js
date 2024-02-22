@@ -29,16 +29,14 @@ var password = prompt("Initiate access protocol: Provide encrypted authenticatio
 
 // Check if password is correct
 if (password === "123456789") {
-    // Display welcome message
-    alert("Welcome Aboard!");
+    // Display access granted message
+    alert("Access Granted!");
 
-    // Redirect to the protected content
-    window.location.href = "https://seaiinitiative.github.io/SEAI-Initiative/";
+    // Redirect to the protected content (replace the URL with your desired destination)
+    window.location.href = "https://example.com/protected-content";
 } else {
-    // Incorrect password
-    alert("Incorrect");
-
-    // Redirect back to login page or display an error message
-    window.location.href = "https://www.google.com/";
+    // Incorrect password handling
+    alert("Incorrect password. Please try again.");
 }
+
 
