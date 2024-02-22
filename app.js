@@ -25,12 +25,12 @@ menu_item.forEach((item) => {
 });
 
 // Prompt user for password
-var password = prompt("Passphrase");
+var password = prompt("Initiate access protocol: Provide encrypted authentication key for system validation.");
 
 // Check if password is correct
 
 if (password === "123456789") {
-	alert("Accesss Granted");
+	alert("Welcome Aboard!");
 
 // Redirect to the protected content
 
