@@ -32,11 +32,15 @@ if (password === "123456789") {
     // Display access granted message
     alert("Access Granted!");
 
-    // Redirect to the protected content (replace the URL with your desired destination)
-    window.location.href = "https://example.com/protected-content";
+    // Delay redirection to ensure the alert is fully displayed
+    setTimeout(function() {
+        // Redirect to the protected content
+        window.location.href = "https://seaiinitiative.github.io/SEAI-Initiative/";
+    }, 500); // Delay of 500 milliseconds (adjust as needed)
 } else {
     // Incorrect password handling
     alert("Incorrect password. Please try again.");
 }
+
 
 
