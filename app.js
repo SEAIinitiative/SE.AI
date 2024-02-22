@@ -23,3 +23,30 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+
+ document.addEventListener('DOMContentLoaded', (event) => {
+            const storedToken = localStorage.getItem('accessGranted');
+            if (storedToken) {
+                showContent();
+            } else {
+                document.getElementById('passwordPrompt').style.display = 'flex';
+            }
+        });
+
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = '123456789'; // Change this to your actual password
+
+            if (passwordInput === correctPassword) {
+                localStorage.setItem('accessGranted', 'true');
+                showContent();
+            } else {
+                alert('Incorrect Key');
+                document.getElementById('password').value = ''; // Optional: Clear the input field after an incorrect attempt
+            }
+        }
+
+        function showContent() {
+            document.getElementById('protectedContent').style.display = 'block';
+            document.getElementById('passwordPrompt').style.display = 'none';
+        }
