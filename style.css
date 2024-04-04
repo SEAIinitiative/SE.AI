@@ -62,7 +62,9 @@ p {
 	color: white;
 	background-color: black;
 }
-.brand h1 { /*title top left*/
+
+/* Title Top Left*/
+.brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: rgb(93, 93, 93);
@@ -85,7 +87,9 @@ p {
 	background-color: white;
 	transition: 0.3s ease background-color;
 }
-#header .nav-bar { /*size of header nav */
+
+/*size of header nav */
+#header .nav-bar { 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -94,7 +98,9 @@ p {
 	max-width: 1300px;
 	padding: 0 10px;
 }
-#header .nav-list ul { /*background of the nav after button*/
+
+/*background of the nav after button*/
+#header .nav-list ul { 
 	list-style: none;
 	position: absolute;
 	background-color: rgb(255, 255, 255);
@@ -110,7 +116,9 @@ p {
 	overflow-x: hidden;
 	transition: 0.5s ease left;
 }
-#header .nav-list ul.active { /*moves navigation box all the way over from the lesft on button click*/
+
+/*moves navigation box all the way over from the lesft on button click*/
+#header .nav-list ul.active { 
 	left: 0%;
 }
 #header .nav-list ul a {
@@ -124,7 +132,9 @@ p {
 	display: block;
 	
 }
-#header .nav-list ul a::after { /*massive text behind nav bars is 'after'*/
+
+/*massive text behind nav bars is 'after'*/
+#header .nav-list ul a::after { 
 	content: attr(data-after);
 	position: absolute;
 	top: 50%;
@@ -136,11 +146,15 @@ p {
 	z-index: -1;
 	transition: 0.3s ease letter-spacing;
 }
-#header .nav-list ul li:hover a::after { /*massive text*/
+
+/*massive text*/
+#header .nav-list ul li:hover a::after { 
 	transform: translate(-50%, -50%) scale(1);
 	letter-spacing: initial;
 }
-#header .nav-list ul li a { /*massive text*/
+
+/*massive text*/
+#header .nav-list ul li a { 
 	transition-property: background-color, color;
 	transition: .2s ease-in-out;
 }
@@ -272,7 +286,6 @@ p {
 #hero h1:nth-child(3) span {
 	animation-delay: 2.5s;
 }
-
 /* End Hero Section */
 
 /* About Section */
@@ -337,6 +350,7 @@ p {
 	color: rgb(0, 0, 0);
 	text-align: left;
 }
+
 /* About Section */
 
 /* Mission section */
@@ -577,110 +591,110 @@ p {
 
 /* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
-	.cta {
-		font-size: 2.5rem;
-		padding: 20px 60px;
-	}
-	h1.section-title {
-		font-size: 6rem;
-	}
+.cta {
+	font-size: 2.5rem;
+	padding: 20px 60px;
+}
+h1.section-title {
+	font-size: 6rem;
+}
 
-	/* Hero */
-	#hero h1 {
-		font-size: 7rem;
-	}
-	/* End Hero */
+/* Hero */
+#hero h1 {
+	font-size: 7rem;
+}
+/* End Hero */
 
-	/* Header */
+/* Header */
 
-	/* Header */
+/* Header */
 
-	/* Services Section */
-	#services .service-bottom .service-item {
-		flex-basis: 45%;
-		margin: 2.5%;
-	}
-	/* End Services Section */
+/* Services Section */
+#services .service-bottom .service-item {
+	flex-basis: 45%;
+	margin: 2.5%;
+}
+/* End Services Section */
 
-	/* Project */
-	#projects .project-item {
-		flex-direction: row;
-	}
-	#projects .project-item:nth-child(even) {
-		flex-direction: row-reverse;
-	}
-	#projects .project-item {
-		height: 400px;
-		margin: 0;
-		width: 100%;
-		border-radius: 0;
-	}
-	#projects .all-projects .project-info {
-		height: 100%;
-	}
-	#projects .all-projects .project-img {
-		height: 100%;
-	}
-	/* End Project */
+/* Project */
+#projects .project-item {
+	flex-direction: row;
+}
+#projects .project-item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+#projects .project-item {
+	height: 400px;
+	margin: 0;
+	width: 100%;
+	border-radius: 0;
+}
+#projects .all-projects .project-info {
+	height: 100%;
+}
+#projects .all-projects .project-img {
+	height: 100%;
+}
+/* End Project */
 
-	/* Whitepaper */
-	#about .about {
-		flex-direction: row;
-	}
-	#about .col-left {
-		width: 600px;
-		height: 400px;
-		padding-left: 60px;
-	}
-	#about .about .col-left .about-img::after {
-		left: -45px;
-		top: 34px;
-		height: 98%;
-		width: 98%;
-		border: 10px solid rgb(0, 0, 0);
-	}
-	#about .col-right {
-		text-align: left;
-		padding: 30px;
-	}
-	#about .col-right h1 {
-		text-align: left;
-	}
-	/* End Whitepaper */
+/* Whitepaper */
+#about .about {
+	flex-direction: row;
+}
+#about .col-left {
+	width: 600px;
+	height: 400px;
+	padding-left: 60px;
+}
+#about .about .col-left .about-img::after {
+	left: -45px;
+	top: 34px;
+	height: 98%;
+	width: 98%;
+	border: 10px solid rgb(0, 0, 0);
+}
+#about .col-right {
+	text-align: left;
+	padding: 30px;
+}
+#about .col-right h1 {
+	text-align: left;
+}
+/* End Whitepaper */
 
-	/* contact  */
-	#contact .contact {
-		flex-direction: column;
-		padding: 100px 0;
-		align-items: center;
-		justify-content: center;
-		min-width: 20vh;
-	}
-	#contact .contact-items {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		margin: 0;
-	}
-	#contact .contact-item {
-		width: 30%;
-		margin: 0;
-		flex-direction: row;
-	}
-	#contact .contact-item .icon {
-		height: 100px;
-		width: 100px;
-	}
-	#contact .contact-item .icon img {
-		object-fit: contain;
-	}
-	#contact .contact-item .contact-info {
-		width: 100%;
-		text-align: left;
-		padding-left: 20px;
-	}
-	/* End contact  */
+/* contact  */
+#contact .contact {
+	flex-direction: column;
+	padding: 100px 0;
+	align-items: center;
+	justify-content: center;
+	min-width: 20vh;
+}
+#contact .contact-items {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 0;
+}
+#contact .contact-item {
+	width: 30%;
+	margin: 0;
+	flex-direction: row;
+}
+#contact .contact-item .icon {
+	height: 100px;
+	width: 100px;
+}
+#contact .contact-item .icon img {
+	object-fit: contain;
+}
+#contact .contact-item .contact-info {
+	width: 100%;
+	text-align: left;
+	padding-left: 20px;
+}
+/* End contact  */
 }
 /* End Media Query For Tablet */
 
