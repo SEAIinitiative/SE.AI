@@ -96,9 +96,9 @@ p {
 }
 
 #header .header-logo {
-	width: 4rem;
+	width: 6vh;
 	height: auto;
-	margin-right: 1vw;
+	margin-right: 2px;
 }
 
 /*size of header nav */
