@@ -365,7 +365,7 @@ p {
 #explore .explore-item ul {
 	padding-left: 20px;
 }
-#explore .explore-item ul {
+#explore .explore-item li {
 	text-align: left;
 	font-size: 1rem;
 	margin-bottom: 9px;
