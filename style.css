@@ -92,13 +92,12 @@ p {
 	display: flex; /* Use flexbox to align image and text */
 	align-items: center; /* Align items vertically */
 	text-decoration: none; /* Remove underline from link */
-
 }
 
 #header .header-logo {
 	width: 6vh;
 	height: auto;
-	margin-right: 2px;
+	margin-right: 3px;
 }
 
 /*size of header nav */
