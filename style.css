@@ -366,22 +366,22 @@ p {
 /* About Section */
 
 /* Mission section */
-#projects .projects {
+#mission .mission {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 100px 0;
 }
-#projects .projects-header h1 {
+#mission .mission-header h1 {
 	margin-bottom: 50px;
 }
-#projects .all-projects {
+#mission .all-mission {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-#projects .project-item {
+#mission .mission-item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -392,7 +392,7 @@ p {
 	border:solid #000;
 	border-radius: 10px;
 }
-#projects .project-info {
+#mission .mission-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
@@ -403,28 +403,28 @@ p {
 	background-color: white;
 	color: rgb(0, 0, 0);
 }
-#projects .project-info h1 {
+#mission .mission-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
 }
-#projects .project-info h2 {
+#mission .mission-info h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
 }
-#projects .project-info p {
+#mission .mission-info p {
 	color: rgb(0, 0, 0);
 }
-#projects .project-img {
+#mission .mission-img {
 	position: static;
 	height: 50%;
 	overflow: visible;
 	transform:scale(.6)
 }
-#projects .project-img img {
+#mission .mission-img img {
 	transition: 0.3s ease transform;
 }
-#projects .project-item:hover .project-img img {
+#mission .mission-item:hover .mission-img img {
 	transform: scale(1.1);
 }
 /* End Mission section */
@@ -628,26 +628,26 @@ h1.section-title {
 }
 /* End Explore Section */
 
-/* Project */
-#projects .project-item {
+/* mission */
+#mission .mission-item {
 	flex-direction: row;
 }
-#projects .project-item:nth-child(even) {
+#mission .mission-item:nth-child(even) {
 	flex-direction: row-reverse;
 }
-#projects .project-item {
+#mission .mission-item {
 	height: 400px;
 	margin: 0;
 	width: 100%;
 	border-radius: 0;
 }
-#projects .all-projects .project-info {
+#mission .all-mission .mission-info {
 	height: 100%;
 }
-#projects .all-projects .project-img {
+#mission .all-mission .mission-img {
 	height: 100%;
 }
-/* End Project */
+/* End mission */
 
 /* Whitepaper */
 #about .about {
