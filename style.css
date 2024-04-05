@@ -362,7 +362,14 @@ p {
 	color: rgb(0, 0, 0);
 	text-align: left;
 }
-
+#explore .explore-item ul {
+	padding-left: 20px;
+}
+#explore .explore-item ul {
+	text-align: left;
+	front-size: 1rem;
+	margin-bottom: 9px;
+}
 /* Explore Section */
 
 /* Mission section */
