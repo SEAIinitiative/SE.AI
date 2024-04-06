@@ -32,6 +32,14 @@ p {
 	font-weight: 300;
 	letter-spacing: 0.05rem;
 }
+
+li{
+	color: black;
+	font-size: 1.4rem;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+}
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
@@ -358,23 +366,43 @@ p {
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
+#explore .explore-item h3 {
+	font-size: 1.5rem;
+	color: rgb(0, 0, 0);
+	margin-bottom: 3px;
+	text-transform: uppercase;
+	margin-top: 15px;
+	text-align: left;
+}
 #explore .explore-item p {
 	color: rgb(0, 0, 0);
 	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+#explore .explore-item p::before {
+    content: '';
+    position: absolute;
+    left: 5.4px;
+	margin-top: 6px;
+    top: 0;
+    width: 1.2px; /* Width of the line */
+    height: 96%; /* Make the line full height */
+    background-color: #000; /* Color of the line */
 }
 #explore .explore-item ul {
 	padding-left: 20px;
 }
 #explore .explore-item li {
+	margin-top: 5px;
 	text-align: left;
-	font-size: 1rem;
 	margin-bottom: 9px;
 }
 /* Explore Section */
 
 /* Mission section */
 #mission .mission {
-	flex-direction: column;
+	flex-direction:column;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 100px 0;
@@ -395,15 +423,16 @@ p {
 	flex-direction: column;
 	width: 80%;
 	margin: 20px auto;
-	overflow: hidden;
+	overflow: visible;
 	border:solid #000;
 	border-radius: 10px;
+	min-height: 130vh;
 }
 #mission .mission-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
-	display: flex;
+	display: block;
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
@@ -418,13 +447,34 @@ p {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
+	margin-bottom: 9px;
 }
 #mission .mission-info p {
 	color: rgb(0, 0, 0);
+	text-align: left;
+	padding-left: 15px;
+	position: relative;
+}
+#mission .mission-info ul{
+	margin-left: 40px;
+}
+#mission .mission-info li{
+	margin-top: 5px;
+	margin-bottom: 9px;
+}
+#mission .mission-info p::before {
+    content: '';
+    position: absolute;
+    left: 5.4px;
+    top: 0;
+    width: 1.2px; /* Width of the line */
+    height: 100%; /* Make the line full height */
+    background-color: #000; /* Color of the line */
 }
 #mission .mission-img {
 	position: static;
-	height: 50%;
+	max-height: 300px;
+	width: auto;
 	overflow: visible;
 	transform:scale(.6)
 }
