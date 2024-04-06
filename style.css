@@ -473,7 +473,7 @@ li{
 }
 #mission .mission-img {
 	position: static;
-	max-height: 300px;
+	max-height: auto;
 	width: auto;
 	overflow: visible;
 	transform:scale(.6)
