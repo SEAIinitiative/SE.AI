@@ -424,7 +424,7 @@ li{
 	width: 90%;
 	margin: 20px auto;
 	overflow: visible;
-	border:solid #000;
+	border:solid 3px #000;
 	border-radius: 15px;
 	min-height: 130vh;
 }
@@ -438,7 +438,7 @@ li{
 	flex-direction: column;
 	background-color: white;
 	color: rgb(0, 0, 0);
-	border-radius: 15gpx;
+	border-radius: 15px;
 }
 #mission .mission-info h1 {
 	font-size: 4rem;
